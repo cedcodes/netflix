@@ -30,7 +30,6 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   font-size:62.5%;
-  font-size:1.4rem;
 }
 body {
   font-family: 'Spartan', sans-serif;
