@@ -1,37 +1,20 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import stars from '../images/shared/background-stars.svg';
+import React, { useState } from 'react';
+import { Bg } from '../styles/Background.styles';
+import data from '../data/data.json';
 
 import Nav from './Nav';
 import Planets from './Planets';
-const BgAnimation = keyframes`
-0%{
-  transform:translate3d(0,0,0)
-}
-100% {
-  transform:translate3d(0,-1200px,0);
-}`;
-const Bg = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  &::before {
-    content: '';
-    background: url(${stars});
-    position: absolute;
-    top: -30%;
-    left: -50%;
-    width: 200%;
-    height: 380rem;
-    background-repeat: repeat;
-    animation: ${BgAnimation} 30s linear infinite;
-  }
-`;
 
 const Background = () => {
+  const [currentPlanet, setCurrentPlanet] = useState(data[0]);
+
+  const handleChangePlanet = (idx) => {
+    setCurrentPlanet(data[idx]);
+  };
+
   return (
     <Bg>
-      <Nav />
+      <Nav planets={data} handleChangePlanet={handleChangePlanet} />
       <Planets />
     </Bg>
   );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavWrap = styled.header`
-  /* position: fixed; */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -33,6 +33,8 @@ export const NavWrap = styled.header`
 `;
 
 export const NavLogo = styled.h1`
+  cursor: pointer;
+  position: relative;
   font-size: 2.8rem;
   padding-left: 2.5rem;
   @media (min-width: 768px) {
@@ -68,11 +70,11 @@ export const NavList = styled.div`
     padding: 0;
   }
 `;
-export const NavLinks = styled.span`
+export const NavLink = styled.span`
+  cursor: pointer;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
-  display: block;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,6 +93,54 @@ export const NavLinks = styled.span`
     border-radius: 50%;
     background-color: var(--white);
   }
+  &.mercury {
+    &::before {
+      background-color: var(--mercury);
+    }
+  }
+
+  &.venus {
+    &::before {
+      background-color: var(--venus);
+    }
+  }
+
+  &.earth {
+    &::before {
+      background-color: var(--earth);
+    }
+  }
+
+  &.mars {
+    &::before {
+      background-color: var(--mars);
+    }
+  }
+
+  &.jupiter {
+    &::before {
+      background-color: var(--jupiter);
+    }
+  }
+
+  &.saturn {
+    &::before {
+      background-color: var(--saturn);
+    }
+  }
+
+  &.uranus {
+    &::before {
+      background-color: var(--uranus);
+    }
+  }
+
+  &.neptune {
+    &::before {
+      background-color: var(--neptune);
+    }
+  }
+
   @media (min-width: 768px) {
     position: relative;
     display: block;
@@ -143,6 +193,7 @@ export const NavLinks = styled.span`
   }
 `;
 export const NavBurger = styled.div`
+  cursor: pointer;
   padding-right: 2.5rem;
   opacity: ${({ navOpen }) => (navOpen ? '1' : '.5')};
   @media (min-width: 768px) {
