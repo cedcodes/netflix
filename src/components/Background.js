@@ -1,12 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import data from '../data/data.json';
 import Nav from './Nav';
 import Planets from './Planets';
 
 import stars from '../images/background-stars.svg';
-
 const starsBg = '../images/background-stars.svg';
-
 const BgAnimation = keyframes`
 0%{
   transform:translate3d(0,0,0)
@@ -37,7 +36,7 @@ const Background = () => {
     <>
       <Bg>
         <Nav />
-        <Planets />
+        <Planets planets={data} />
       </Bg>
     </>
   );
