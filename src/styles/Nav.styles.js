@@ -68,6 +68,7 @@ export const NavList = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding: 0;
+    padding-right: 2rem;
   }
 `;
 export const NavLink = styled.span`
