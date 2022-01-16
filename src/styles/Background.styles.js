@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import stars from '../images/shared/background-stars.svg';
+import stars from '../shared/background-stars.svg';
 
 const BgAnimation = keyframes`
 0%{

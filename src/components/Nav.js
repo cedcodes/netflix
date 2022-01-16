@@ -6,8 +6,8 @@ import {
   NavLink,
   NavBurger,
 } from '../styles/Nav.styles';
-import burger from '../images/shared/icon-hamburger.svg';
-import chevron from '../images/shared/icon-chevron.svg';
+import burger from '../shared/icon-hamburger.svg';
+import chevron from '../shared/icon-chevron.svg';
 const Nav = ({ planets, handleChangePlanet }) => {
   const [activePlanet, setActivePlanet] = React.useState('mercury');
 
