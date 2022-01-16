@@ -6,6 +6,9 @@ export const PlanetsWrap = styled.main`
   position: relative;
   padding: 0 2.5rem;
   z-index: 1;
+  @media (min-width: 768px) {
+    margin-top: 7rem;
+  }
 `;
 
 export const PlanetsImageWrap = styled.div`
@@ -15,6 +18,9 @@ export const PlanetsImageWrap = styled.div`
     display: block;
     margin: auto;
     max-width: 50%;
+    @media (min-width: 768px) {
+      width: 100%;
+    }
   }
   .geology {
     position: absolute;
@@ -22,10 +28,20 @@ export const PlanetsImageWrap = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%);
+    @media (min-width: 768px) {
+      max-width: 15rem;
+      top: 60%;
+    }
   }
 `;
 
-export const PlanetsInfo = styled.div``;
+export const PlanetsInfo = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
 
 export const PlanetsInfoWrap = styled.div`
   h1 {
@@ -38,11 +54,14 @@ export const PlanetsInfoWrap = styled.div`
       width: 0;
     }
   }
-
   p {
     font-size: 1.2rem;
     line-height: 2.4;
     margin: 2rem 0 0;
+  }
+  @media (min-width: 768px) and (max-width: 1110px) {
+    margin-right: 70px;
+    text-align: left;
   }
 `;
 
@@ -79,7 +98,11 @@ export const PlanetsTab = styled.div`
   top: 7rem;
   border-bottom: 1px solid hsla(0, 0%, 100%, 20%);
   z-index: 50;
-
+  @media (min-width: 768px) {
+    position: static;
+    display: block;
+    min-width: 268px;
+  }
   button {
     font-family: 'Spartan', sans-serif;
     position: relative;
@@ -149,6 +172,67 @@ export const PlanetsTab = styled.div`
       .earth & {
         &::after {
           background-color: var(--earth);
+        }
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      &::after {
+        display: none;
+      }
+      padding: 0 2rem;
+      margin: 0;
+      width: 100%;
+      text-align: left;
+      line-height: 4rem;
+      color: var(--white);
+      border: 1px solid hsla(0, 0%, 100%, 20%);
+      transition: 0.3s;
+      &:not(:first-child) {
+        margin-top: 1.6rem;
+      }
+      &:hover {
+        border-color: var(--darkGray);
+        background: var(--darkGray);
+      }
+
+      &.active {
+        .mercury & {
+          background-color: var(--mercury);
+          border-color: var(--mercury);
+        }
+        .venus & {
+          background-color: var(--venus);
+          border-color: var(--venus);
+        }
+
+        .earth & {
+          background-color: var(--earth);
+          border-color: var(--earth);
+        }
+
+        .mars & {
+          background-color: var(--mars);
+          border-color: var(--mars);
+        }
+
+        .jupiter & {
+          background-color: var(--jupiter);
+          border-color: var(--jupiter);
+        }
+
+        .saturn & {
+          background-color: var(--saturn);
+          border-color: var(--saturn);
+        }
+
+        .uranus & {
+          background-color: var(--uranus);
+          border-color: var(--uranus);
+        }
+
+        .neptune & {
+          background-color: var(--neptune);
+          border-color: var(--neptune);
         }
       }
     }
