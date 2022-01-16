@@ -11,6 +11,7 @@ export const NavWrap = styled.header`
   height: 6.8rem;
   text-transform: uppercase;
   border-bottom: 1px solid hsla(0, 0%, 100%, 10%);
+  z-index: 2;
   @media (min-width: 768px) {
     display: block;
     position: static;

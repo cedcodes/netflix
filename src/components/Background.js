@@ -3,7 +3,7 @@ import { Bg } from '../styles/Background.styles';
 import data from '../data/data.json';
 
 import Nav from './Nav';
-import Planets from './Planets';
+import { Planets } from './Planets';
 import Footer from './Footer';
 
 const Background = () => {
@@ -18,11 +18,13 @@ const Background = () => {
   }, [currentPlanet]);
 
   return (
-    <Bg>
-      <Nav planets={data} handleChangePlanet={handleChangePlanet} />
-      <Planets currentPlanet={currentPlanet} />
-      <Footer currentPlanet={currentPlanet} />
-    </Bg>
+    <>
+      <Bg>
+        <Nav planets={data} handleChangePlanet={handleChangePlanet} />
+        <Planets currentPlanet={currentPlanet} resetTab={resetTab} />
+        <Footer currentPlanet={currentPlanet} />
+      </Bg>
+    </>
   );
 };
 

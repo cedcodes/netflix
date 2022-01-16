@@ -11,7 +11,7 @@ const BgAnimation = keyframes`
 export const Bg = styled.div`
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   &::before {
     content: '';
     background: url(${stars});
