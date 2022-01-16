@@ -9,6 +9,12 @@ export const PlanetsWrap = styled.main`
   @media (min-width: 768px) {
     margin-top: 7rem;
   }
+  @media (min-width: 1100px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
 `;
 
 export const PlanetsImageWrap = styled.div`
@@ -18,8 +24,10 @@ export const PlanetsImageWrap = styled.div`
     display: block;
     margin: auto;
     max-width: 50%;
-    @media (min-width: 768px) {
-      width: 100%;
+    @media (min-width: 1100px) {
+      max-width: 100%;
+      width: 50rem;
+      margin-left: 10rem;
     }
   }
   .geology {
@@ -32,6 +40,11 @@ export const PlanetsImageWrap = styled.div`
       max-width: 15rem;
       top: 60%;
     }
+    @media (min-width: 1100px) {
+      max-width: 20rem;
+      top: 60%;
+      left: 42%;
+    }
   }
 `;
 
@@ -40,6 +53,11 @@ export const PlanetsInfo = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (min-width: 1100px) {
+      flex-direction: column;
+      width: 40%;
+      padding-right: 2rem;
+    }
   }
 `;
 
@@ -62,6 +80,14 @@ export const PlanetsInfoWrap = styled.div`
   @media (min-width: 768px) and (max-width: 1110px) {
     margin-right: 70px;
     text-align: left;
+  }
+  @media (min-width: 1100px) {
+    h1 {
+      font-size: 7rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -86,6 +112,11 @@ export const PlanetsLink = styled.div`
     color: var(--white);
     font-weight: 700;
   }
+  @media (min-width: 1100px) {
+    font-size: 1.5rem;
+    padding: 4rem 0;
+    display: block;
+  }
 `;
 
 export const PlanetsTab = styled.div`
@@ -102,6 +133,9 @@ export const PlanetsTab = styled.div`
     position: static;
     display: block;
     min-width: 268px;
+  }
+  @media (min-width: 1100px) {
+    width: 100%;
   }
   button {
     font-family: 'Spartan', sans-serif;
@@ -175,7 +209,7 @@ export const PlanetsTab = styled.div`
         }
       }
     }
-    @media only screen and (min-width: 768px) {
+    @media (min-width: 768px) {
       &::after {
         display: none;
       }
@@ -236,6 +270,8 @@ export const PlanetsTab = styled.div`
         }
       }
     }
+    @media (min-width: 1100px) {
+      width: 100%;
+    }
   }
 `;
-export const PlanetsButton = styled.button``;
