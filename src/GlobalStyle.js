@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   --darkGray: hsl(240, 17%, 26%);
   
   --bgColor: hsl(240, 67%, 8%);
+  
   --mercury: hsl(194, 48%, 49%);
   --venus: hsl(33, 82%, 61%);
   --earth: hsl(263, 67%, 51%);
@@ -33,5 +34,11 @@ body {
 }
 h1,h2 {
   font-family: 'Antonio', sans-serif;
+}
+button {
+  background:none;
+  outline:none;
+  border:none;
+  cursor: pointer;
 }
 `;

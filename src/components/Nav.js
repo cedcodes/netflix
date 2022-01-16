@@ -12,11 +12,11 @@ const Nav = ({ planets, handleChangePlanet }) => {
   const [activePlanet, setActivePlanet] = React.useState('mercury');
 
   const [navOpen, setNavOpen] = useState(true);
-  const handleNav = () => setNavOpen(!navOpen);
 
   const handleNewPlanet = (index, planetName) => {
     handleChangePlanet(index, planetName);
     setActivePlanet(planetName.toLowerCase());
+    setNavOpen(!navOpen);
   };
   return (
     <NavWrap>

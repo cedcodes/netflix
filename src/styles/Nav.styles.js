@@ -82,6 +82,10 @@ export const NavLink = styled.span`
   justify-content: space-between;
   border-bottom: 1px solid hsla(0, 0%, 100%, 10%);
   padding: 1rem 0 1rem 4rem;
+  &:nth-child(8) {
+    border: none;
+  }
+
   img {
     width: 1.5rem;
   }

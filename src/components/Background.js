@@ -8,11 +8,21 @@ import Footer from './Footer';
 
 const Background = () => {
   const [currentPlanet, setCurrentPlanet] = useState(data[0]);
+  const [bodyClass, setBodyClass] = React.useState(data[0].name.toLowerCase());
 
   const [resetTab, setResetTab] = useState(0);
-  const handleChangePlanet = (idx) => {
-    setCurrentPlanet(data[idx]);
+  const handleChangePlanet = (index, name) => {
+    setCurrentPlanet(data[index]);
+    setBodyClass(name.toLowerCase());
   };
+  useEffect(() => {
+    function handleBodyClass() {
+      document.body.removeAttribute('class');
+      document.body.classList.toggle(bodyClass);
+    }
+    handleBodyClass();
+  }, [bodyClass]);
+
   useEffect(() => {
     setResetTab(0);
   }, [currentPlanet]);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 import { tabs } from '../data/tabs';
 import linkIcon from '../shared/icon-source.svg';
@@ -9,9 +10,12 @@ import {
   PlanetsInfoWrap,
   PlanetsLink,
   PlanetsTab,
+  PlanetsButton,
 } from '../styles/Planets.styles';
 
 export const Planets = ({ currentPlanet, resetTab }) => {
+  const mobile = useMediaQuery('(min-width: 768px)');
+
   const [isActiveTab, setIsActiveTab] = useState(resetTab);
   const [currentTab, setCurrentTab] = useState(tabs[0].data);
 
@@ -33,8 +37,15 @@ export const Planets = ({ currentPlanet, resetTab }) => {
   return (
     <PlanetsWrap>
       <PlanetsImageWrap>
-        {currentTab === 'overview' ? (
-          <img src={currentPlanet.images.overview} alt={currentPlanet.name} />
+        {currentTab === 'geology' ? (
+          <>
+            <img src={currentPlanet.images.overview} alt={currentPlanet.name} />
+            <img
+              className="geology"
+              src={currentPlanet.images[currentTab]}
+              alt="geology"
+            />
+          </>
         ) : (
           <img
             src={currentPlanet.images[currentTab]}
@@ -48,6 +59,7 @@ export const Planets = ({ currentPlanet, resetTab }) => {
           <h1>{currentPlanet.name}</h1>
           <p>{currentPlanet[currentTab].content}</p>
           <PlanetsLink>
+            Source: &nbsp;
             <a href={currentPlanet[currentTab].source} target="_blank">
               Wikipedia
             </a>
@@ -57,10 +69,18 @@ export const Planets = ({ currentPlanet, resetTab }) => {
         <PlanetsTab>
           {tabs.map((tab, index) => {
             let data = tab.data;
-            console.log(tab.data);
+
             return (
-              <button key={index} onClick={() => onClickTabItem(index, data)}>
-                {tab.text}
+              <button
+                key={index}
+                id={tab.id}
+                onClick={() => onClickTabItem(index, data)}
+                className={`${data} ${
+                  isActiveTab === index ? 'active' : 'inactive'
+                }`}
+              >
+                {/* {tab.text} */}
+                {mobile ? tab.text : tab.mobile}
               </button>
             );
           })}
