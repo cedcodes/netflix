@@ -271,7 +271,9 @@ export const PlanetsTab = styled.div`
       }
     }
     @media (min-width: 1100px) {
+      font-size: 1.3rem;
       width: 100%;
+      height: 7rem;
     }
   }
 `;
