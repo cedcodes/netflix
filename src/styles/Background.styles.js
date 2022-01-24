@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import stars from '../shared/background-stars.svg';
 
+
+
 const BgAnimation = keyframes`
 0%{
   transform:translate3d(0,0,0)
